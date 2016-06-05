@@ -7,19 +7,21 @@
 //
 
 import UIKit
+import TwitterKit
 
-class ViewController: UIViewController {
+class ViewController: TWTRTimelineViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        let client = TWTRAPIClient()
+        self.dataSource = TWTRUserTimelineDataSource(screenName: "GhazazaniSean", APIClient: client)
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
 
